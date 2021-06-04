@@ -14,7 +14,8 @@ Story:
 public class App {
     static Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
-
+        App myApp = new App();
+        myApp.output(myApp.nounPrompt(), myApp.verbPrompt(), myApp.adjPrompt(), myApp.advPrompt());
     }
 
     private String nounPrompt() {
@@ -22,5 +23,22 @@ public class App {
         return in.nextLine();
     }
 
+    private String verbPrompt() {
+        System.out.print("Enter a verb: ");
+        return in.nextLine();
+    }
 
+    private String adjPrompt() {
+        System.out.print("Enter a adjective: ");
+        return in.nextLine();
+    }
+
+    private String advPrompt() {
+        System.out.print("Enter a adverb: ");
+        return in.nextLine();
+    }
+
+    private void output(String noun, String verb, String adj, String adv) {
+        System.out.printf("There was a %s %s that liked to %s %s. It then lived happily ever after.", adj, noun, verb, adv);
+    }
 }
